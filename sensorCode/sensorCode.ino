@@ -18,13 +18,13 @@ void setup(){
 }
 
 void loop(){
+   
 	if(millis()>=targetTime){
     buttonState = digitalRead(BUTTONPIN);
+    if (buttonState == LOW) {
+        Serial.println(reset.c_str());
+      }
 		targetTime= millis()+interval;
-    if (buttonState == HIGH) {
-      Serial.println(reset.c_str());
-    } 
-
 		 //TODO: Add other sensor read outs
      //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
 		 //TODO: combine them into a string that can be understood by server.js
