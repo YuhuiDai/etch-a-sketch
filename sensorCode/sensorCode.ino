@@ -21,7 +21,6 @@ void loop(){
 	if(millis()>=targetTime){
     buttonState = digitalRead(BUTTONPIN);
 		targetTime= millis()+interval;
-		Serial.println(analogRead(SENSORPINA));
     if (buttonState == HIGH) {
       Serial.println(reset.c_str());
     } 
