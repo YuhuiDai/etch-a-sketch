@@ -1,3 +1,4 @@
+#include<vector>
 #define BUTTONPIN 6
 #define XPIN A0
 #define YPIN A5
@@ -9,7 +10,7 @@ unsigned long targetTime=0;
 const unsigned long interval=1000; //TODO: How fast should we read
 const String reset = "rst";
 bool changeColor = false;
-vector<String> colors = {"#eff6fd","#d8e9fa","#bed0e9","#eb5c74","#fdeef1"};
+vector<string> colors = {"#eff6fd","#d8e9fa","#bed0e9","#eb5c74","#fdeef1"};
 
 
 void setup(){
