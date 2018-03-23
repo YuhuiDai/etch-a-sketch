@@ -11,7 +11,7 @@ const String reset = "rst";
 
 void setup(){
   // TODO: begin the serial connection with a baudrate of 115200
-  Serial.begin(9600);   
+  Serial.begin(115200);   
   // initialize the pushbutton pin as an input:
   pinMode(BUTTONPIN, INPUT);
 
