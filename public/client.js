@@ -17,6 +17,11 @@ var firstMessage=true;    // What the first message, to start on the first value
       ctx.clear();
     });
 
+    socket.on('color', function(data) { // on a 'reset' message clean and reste firstMessage
+      COLOUR = data;
+      console.log("color changed");
+    });
+
     socket.on('new-pos', function(newPosition) { // handling new sensor values
 
       //TODO: Map the incoming 10-bit numbers to the height and width of the screen.

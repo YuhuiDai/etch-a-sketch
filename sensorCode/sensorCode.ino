@@ -8,6 +8,9 @@ int buttonState = 0;
 unsigned long targetTime=0;
 const unsigned long interval=1000; //TODO: How fast should we read
 const String reset = "rst";
+bool changeColor = false;
+vector<String> colors = {"#eff6fd","#d8e9fa","#bed0e9","#eb5c74","#fdeef1"};
+
 
 void setup(){
   // TODO: begin the serial connection with a baudrate of 115200
@@ -24,6 +27,14 @@ void loop(){
     if (buttonState == LOW) {
         Serial.println(reset.c_str());
       }
+    if (changeColor) {
+      int num = (0 + (rand() % (int)(5)));
+      String color = colors[num];
+      Serial.println(color.c_str());
+      changeColor = false;
+    } else {
+      changeColor = true;  
+    }
 		targetTime= millis()+interval;
 		 //TODO: Add other sensor read outs
      //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
