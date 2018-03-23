@@ -29,8 +29,10 @@ void loop(){
      //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
 		 //TODO: combine them into a string that can be understood by server.js
     int curr_x = analogRead(XPIN);
+    int xp =  map(curr_x, 0, 1023, 0, 500);
     int curr_y = analogRead(YPIN);
-    String newPosition = String(curr_x)+","+String(curr_y)+ "\r\n";
+    int yp =  map(curr_y, 0, 1023, 0, 500);
+    String newPosition = String(xp)+","+String(yp)+ "\r\n";
     Serial.println(newPosition);
 		 //TODO: send the string over serial
 
