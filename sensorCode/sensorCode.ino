@@ -1,4 +1,3 @@
-#include<vector>
 #define BUTTONPIN 6
 #define XPIN A0
 #define YPIN A5
@@ -9,8 +8,8 @@ int buttonState = 0;
 unsigned long targetTime=0;
 const unsigned long interval=1000; //TODO: How fast should we read
 const String reset = "rst";
+const String color = "color";
 bool changeColor = false;
-vector<string> colors = {"#eff6fd","#d8e9fa","#bed0e9","#eb5c74","#fdeef1"};
 
 
 void setup(){
@@ -29,8 +28,6 @@ void loop(){
         Serial.println(reset.c_str());
       }
     if (changeColor) {
-      int num = (0 + (rand() % (int)(5)));
-      String color = colors[num];
       Serial.println(color.c_str());
       changeColor = false;
     } else {

@@ -37,7 +37,7 @@ parser.on('data', function(data) { // on data from the arduino
 
   if(data=='rst'){  // if its the 'rst' string call reset
     io.emit('reset');
-  } else if (data.substring(0, 1) == '#'){
+  } else if (data == 'color'){
     io.emit('color', data);
   } else{ // any other data we try to forward by spliting it
     var transmitData = [data.split(',')[0],data.split(',')[1]];
