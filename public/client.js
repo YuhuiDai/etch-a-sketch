@@ -13,6 +13,7 @@ var firstMessage=true;    // What the first message, to start on the first value
 
     socket.on('reset', function() { // on a 'reset' message clean and reste firstMessage
       firstMessage=true;
+      console.log("button clicked");
       ctx.clear();
     });
 
@@ -20,6 +21,7 @@ var firstMessage=true;    // What the first message, to start on the first value
 
       //TODO: Map the incoming 10-bit numbers to the height and width of the screen.
       // See https://github.com/soulwire/sketch.js/wiki/API for sketch references
+      console.log("new position");
 
       if(firstMessage){ // if its the first message store that value as previous
         firstMessage=false;
